@@ -1,6 +1,7 @@
 app:
   title: Scaffolded Backstage App
-  baseUrl: http://localhost:3000
+  #baseUrl: http://localhost:3000
+  baseUrl: http://localhost:7007
 
 organization:
   name: My Company
@@ -17,7 +18,7 @@ backend:
     port: 7007
     # Uncomment the following host directive to bind to all IPv4 interfaces and
     # not just the baseUrl hostname.
-    # host: 0.0.0.0
+    host: 0.0.0.0
   csp:
     connect-src: ["'self'", 'http:', 'https:']
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
@@ -64,11 +65,13 @@ proxy:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    #runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
 auth:
+  environment: development
   # see https://backstage.io/docs/auth/ to learn about auth providers
   providers:
     github:

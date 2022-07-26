@@ -1,0 +1,9 @@
+.git
+node_modules
+*.local.yaml
+.env
+
+packages/*/dist
+packages/*/node_modules
+plugins/*/dist
+plugins/*/node_modules
