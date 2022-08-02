@@ -6,8 +6,8 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "rg-backstage"
-    storage_account_name = "bertstabackstage"
+    resource_group_name  = "rg-common"
+    storage_account_name = "badbortcommontfstatesta"
     container_name       = "sc-backstage-terraform"
     key                  = "backstage-infrastructure.tfstate"
     subscription_id      = "bd8e250a-66a6-4038-acd8-0d6aced3e3c8"
