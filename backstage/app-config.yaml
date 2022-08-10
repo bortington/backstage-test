@@ -37,10 +37,10 @@ backend:
     #   user: ${POSTGRES_USER}
     #   password: ${POSTGRES_PASSWORD}
     client: better-sqlite3
-    # connection: ':memory:'
+    connection: ':memory:'
     # connection: '/srv/backstage-data'
-    connection:
-      directory: /srv/backstage-data
+    # connection:
+      # directory: /srv/backstage-data
     
   cache:
     store: memory
