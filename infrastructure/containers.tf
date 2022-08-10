@@ -17,7 +17,7 @@ resource "azurerm_container_group" "cg" {
 
   container {
     name   = "testsite"
-    image  = "registry.hub.docker.com/bortos/fredstage:tagname"
+    image  = "registry.hub.docker.com/bortos/fredstage:latest"
     cpu    = "0.5"
     memory = "1"
 
