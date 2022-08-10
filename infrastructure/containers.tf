@@ -15,7 +15,7 @@ resource "azurerm_container_group" "cg" {
   dns_name_label      = "backstage"
   os_type             = "Linux"
 
-    container {
+  container {
     name   = "testsite"
     image  = "registry.hub.docker.com/bortos/fredstage:latest"
     cpu    = "0.5"
