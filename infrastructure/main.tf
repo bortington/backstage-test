@@ -6,7 +6,7 @@ terraform {
   }
 
   # backend "remote" {}
- 
+
   backend "azurerm" {
     resource_group_name  = "rg-common"
     storage_account_name = "badbortcommontfstatesta"
