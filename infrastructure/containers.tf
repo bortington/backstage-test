@@ -4,7 +4,7 @@
 
 data "azurerm_dns_zone" "badbort" {
   name                = "badbort.com"
-  resource_group_name = azurerm_resource_group.rg_backstage.name
+  resource_group_name = "rg-common"
 }
 
 resource "azurerm_container_group" "cg" {
