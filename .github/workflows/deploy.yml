@@ -2,10 +2,14 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'infrastructure/**/*'
 
   push:
     branches:
       - main
+    paths:
+      - 'infrastructure/**/*'
 
   workflow_run:
     workflows: ["build"]
