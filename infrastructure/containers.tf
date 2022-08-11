@@ -16,14 +16,20 @@ resource "azurerm_container_group" "cg" {
   os_type             = "Linux"
 
   container {
-    name   = "testsite"
+    name   = "backstage"
     image  = "registry.hub.docker.com/bortos/fredstage:latest"
     cpu    = "0.5"
     memory = "1"
 
     ports {
-      port     = 80
+      port     = 7007
       protocol = "TCP"
+    }
+
+    secure_environment_variables = {
+      GITHUB_TOKEN              = var.GITHUB_TOKEN
+      AUTH_GITHUB_CLIENT_ID     = var.AUTH_GITHUB_CLIENT_ID
+      AUTH_GITHUB_CLIENT_SECRET = var.AUTH_GITHUB_CLIENT_SECRET
     }
   }
 }
