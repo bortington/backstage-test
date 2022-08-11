@@ -44,7 +44,10 @@ jobs:
       ARM_USE_OIDC: true
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-
+      TF_VAR_AUTH_GITHUB_CLIENT_ID: ${{ secrets.BACKSTAGE_AUTH_GITHUB_CLIENT_ID }}
+      TF_VAR_AUTH_GITHUB_CLIENT_SECRET: ${{ secrets.BACKSTAGE_AUTH_GITHUB_CLIENT_SECRET }}
+      TF_VAR_GITHUB_TOKEN: ${{ secrets.BACKSTAGE_GITHUB_TOKEN }}
+      
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
