@@ -35,7 +35,7 @@ resource "azurerm_container_group" "cg" {
 }
 
 resource "azurerm_dns_cname_record" "example" {
-  name                = "www"
+  name                = "backstage"
   zone_name           = data.azurerm_dns_zone.badbort.name
   resource_group_name = data.azurerm_dns_zone.badbort.resource_group_name
   ttl                 = 300
