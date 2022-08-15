@@ -28,3 +28,18 @@ resource "azurerm_resource_group" "rg_backstage" {
   location = "Australia East"
   tags     = var.resource_tags
 }
+
+resource "azurerm_storage_account" "sta" {
+  name                     = "backstagetestingsta"
+  account_replication_type = "LRS"
+  account_tier             = "Standard"
+  min_tls_version          = "TLS1_2"
+  resource_group_name      = azurerm_resource_group.rg_backstage.name
+  location                 = azurerm_resource_group.rg_backstage.location
+}
+
+resource "azurerm_storage_share" "caddy_sc" {
+  name                 = "backstage-caddy-data"
+  storage_account_name = azurerm_storage_account.sta.name
+  quota                = 1
+}
