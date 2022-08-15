@@ -30,7 +30,7 @@ resource "azurerm_resource_group" "rg_backstage" {
 }
 
 resource "azurerm_storage_account" "sta" {
-  name                     = "backstage-testing-sta"
+  name                     = "backstagetestingsta"
   account_replication_type = "LRS"
   account_tier             = "Standard"
   min_tls_version          = "TLS1_2"
