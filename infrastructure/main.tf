@@ -30,12 +30,13 @@ resource "azurerm_resource_group" "rg_backstage" {
 }
 
 resource "azurerm_storage_account" "sta" {
-  name                      = "backstage-testing-sta"
-  account_kind              = "Standard"
-  account_replication_type  = "LRS"
-  enable_https_traffic_only = true
-  resource_group_name       = azurerm_resource_group.rg_backstage.name
-  location                  = azurerm_resource_group.rg_backstage.location
+  name                     = "backstage-testing-sta"
+  account_kind             = "Standard"
+  account_replication_type = "LRS"
+  account_tier             = "Standard"
+  min_tls_version          = "TLS1_2"
+  resource_group_name      = azurerm_resource_group.rg_backstage.name
+  location                 = azurerm_resource_group.rg_backstage.location
 }
 
 resource "azurerm_storage_share" "caddy_sc" {
