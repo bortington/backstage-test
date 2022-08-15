@@ -21,7 +21,7 @@ resource "azurerm_container_group" "cg" {
       port     = 7007
       protocol = "TCP"
     }
-    
+
     secure_environment_variables = {
       GITHUB_TOKEN              = var.GITHUB_TOKEN
       AUTH_GITHUB_CLIENT_ID     = var.AUTH_GITHUB_CLIENT_ID
@@ -46,14 +46,14 @@ resource "azurerm_container_group" "cg" {
     }
 
     volume {
-      name = "aci-caddy-data"
-      mount_path = "/data"
+      name                 = "aci-caddy-data"
+      mount_path           = "/data"
       storage_account_name = azurerm_storage_account.sta.name
-      storage_account_key = azurerm_storage_account.sta.primary_access_key
-      share_name = azurerm_storage_share.caddy_sc.name
+      storage_account_key  = azurerm_storage_account.sta.primary_access_key
+      share_name           = azurerm_storage_share.caddy_sc.name
     }
 
-    commands = [ "caddy", "reverse-proxy", "--from", "backstage.australiaeast.azurecontainer.io","--to", "localhost:7007" ]
+    commands = ["caddy", "reverse-proxy", "--from", "backstage.australiaeast.azurecontainer.io", "--to", "localhost:7007"]
   }
 }
 
