@@ -19,8 +19,8 @@ backend:
     # Uncomment the following host directive to bind to all IPv4 interfaces and
     # not just the baseUrl hostname.
     host: 0.0.0.0
-  # csp:
-  #   connect-src: ["'self'", 'http:', 'https:']
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
   #   # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
   #   # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
