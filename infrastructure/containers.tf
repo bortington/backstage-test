@@ -53,7 +53,8 @@ resource "azurerm_container_group" "cg" {
       share_name           = azurerm_storage_share.caddy_sc.name
     }
 
-    commands = ["caddy", "reverse-proxy", "--from", "backstage.australiaeast.azurecontainer.io", "--to", "localhost:7007"]
+    # commands = ["caddy", "reverse-proxy", "--from", "backstage.australiaeast.azurecontainer.io", "--to", "localhost:7007"]
+    commands = ["caddy", "reverse-proxy", "--from", "backstage.badbort.com", "--to", "localhost:7007"]
   }
 }
 
