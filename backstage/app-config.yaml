@@ -13,7 +13,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: https://backstage.badbort.com:443
+  baseUrl: https://backstage.badbort.com
   listen:
     port: 7007
     # Uncomment the following host directive to bind to all IPv4 interfaces and
@@ -25,7 +25,7 @@ backend:
   #   # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
     # origin: http://localhost:7007
-    origin: https://backstage.badbort.com:443
+    origin: https://backstage.badbort.com
     methods: [GET, POST, PUT, DELETE]
     credentials: true
 
