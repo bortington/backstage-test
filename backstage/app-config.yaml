@@ -1,7 +1,7 @@
 app:
   title: Scaffolded Backstage App
   #baseUrl: http://localhost:3000
-  baseUrl: http://localhost:7007
+  baseUrl: https://${CUSTOM_DOMAIN}
 
 organization:
   name: Fred Company
@@ -13,7 +13,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: http://localhost:7007
+  baseUrl: https://${CUSTOM_DOMAIN}
   listen:
     port: 7007
     # Uncomment the following host directive to bind to all IPv4 interfaces and
@@ -25,7 +25,7 @@ backend:
   #   # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
     # origin: http://localhost:7007
-    origin: https://backstage.badbort.com:443
+    origin: https://${CUSTOM_DOMAIN}:443
     methods: [GET, POST, PUT, DELETE]
     credentials: true
 

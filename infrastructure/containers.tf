@@ -22,6 +22,10 @@ resource "azurerm_container_group" "cg" {
       protocol = "TCP"
     }
 
+    environment_variables = {
+      CUSTOM_DOMAIN = "backstage.badbort.com"
+    }
+
     secure_environment_variables = {
       GITHUB_TOKEN              = var.GITHUB_TOKEN
       AUTH_GITHUB_CLIENT_ID     = var.AUTH_GITHUB_CLIENT_ID
