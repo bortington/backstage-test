@@ -16,8 +16,6 @@ services:
       AUTH_GITHUB_CLIENT_SECRET: ${AUTH_GITHUB_CLIENT_SECRET}
       GITHUB_TOKEN: ${GITHUB_TOKEN}
     ports:
-      - 7000:7000
-      - 3000:3000
       - 7007:7007
 
   # db:
