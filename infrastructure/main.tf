@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "~> 3.18.0" # Error in 3.19 https://github.com/hashicorp/terraform-provider-azurerm/issues/18039
     }
   }
