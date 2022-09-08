@@ -23,3 +23,11 @@ variable "GITHUB_TOKEN" {
   sensitive   = true
   type        = string
 }
+
+variable "dns_zone_resource_group" {
+  default = "rg-common"  
+}
+
+variable "dns_zone_name" {
+  default = "badbort.com"
+}
