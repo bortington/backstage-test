@@ -5,6 +5,9 @@ edit_uri: edit/main/docs
 
 plugins:
   - mermaid2
+
+theme:
+  name: material
   
 nav:
   - Getting Started:

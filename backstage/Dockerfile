@@ -43,6 +43,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     yarn config set python /usr/bin/python3
 
+# Alek: added to satisfy mkdocs plugins
+RUN pip3 install mkdocs-mermaid2-plugin mkdocs-material
+
 # Copy the install dependencies from the build stage and context
 COPY --from=build /app/yarn.lock /app/package.json /app/packages/backend/dist/skeleton.tar.gz ./
 RUN tar xzf skeleton.tar.gz && rm skeleton.tar.gz
