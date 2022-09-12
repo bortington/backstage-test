@@ -1,13 +1,14 @@
 # Mermaid Diagrams
 
+I was playing around with this for some time and found that mkdocs can render mermaid diagram using mermaid2 plugin:
+
+```yaml
+plugins:
+  - mermaid2
 ```
-markdown_extensions:
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-```
+
+Unfortunately it seems that backstage techdocs will not include the javascripts necessary. I have read that it may be possible to include these scripts as part of the backstage frontend.
+
 
 ```mermaid
 graph LR

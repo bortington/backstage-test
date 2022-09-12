@@ -59,3 +59,32 @@ Note: I had issues fetching some yarn packages and had to disable GlobalProtect.
 We've create an image and tagged it, so now all we need to do is run it.
 
 Since we have a docker image with the tag backstage, our `docker-compose.yml` file should be successful in starting it. You can now run `docker compose up` which will run our image.
+
+
+# Adding a repository
+
+Once the backstage image is running you should be able to connect to it from http://localhost:7007/. The `app-config.yaml` comes bundled with a bunch of components already set up, so there should be some existing content you can browser.
+
+To add your repository:
+- Navigate to Home tab
+- Click `CREATE COMPONENT`
+- Click `REGISTER EXISTING COMPONENT`
+- If your repository does not contain a `catalog-info.yaml` file then you must create it.  An example configuration:
+    ```
+    apiVersion: backstage.io/v1alpha1
+    kind: Component
+    metadata:
+    name: berty
+    description: An example of a Backstage application.
+    annotations:
+        github.com/project-slug: bortington/backstage
+        backstage.io/techdocs-ref: dir:.
+    spec:
+        type: website
+        owner: john@example.com
+        lifecycle: experimental
+    ```
+    See [Descriptor Format of Catalog Entities](https://backstage.io/docs/features/software-catalog/descriptor-format) for more information about this file.
+- Enter the full path to the entity file, which should be a `catalog-info.yaml` file. For example, `https://github.com/bortington/backstage-test/blob/main/catalog-info.yaml`.
+
+In the current `app-config.yaml` file techdocs will generate the static documentation automatically as the `techdocs` `builder` setting is set to `local`.

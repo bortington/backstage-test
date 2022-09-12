@@ -1,6 +1,6 @@
 app:
   title: Scaffolded Backstage App
-  baseUrl: http://localhost:3000
+  baseUrl: http://localhost:7007
   #baseUrl: https://backstage.badbort.com:443
 
 organization:
